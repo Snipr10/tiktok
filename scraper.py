@@ -20,7 +20,7 @@ class BrowserManager:
 
     async def __aenter__(self):
         headless = os.getenv('HEADLESS', 'true').lower() == 'true'
-        self.browser = await launch(headless=False,
+        self.browser = await launch(headless=True,
                                     handleSIGINT=False,
                                     handleSIGTERM=False,
                                     handleSIGHUP=False,
