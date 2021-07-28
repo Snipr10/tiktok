@@ -19,6 +19,7 @@ class BrowserManager:
         self.params = kargs
 
     async def __aenter__(self):
+        # proxy https://stackoverflow.com/questions/59270710/python-pyppeteer-proxy-usage
         headless = os.getenv('HEADLESS', 'true').lower() == 'true'
         self.browser = await launch(headless=True,
                                     handleSIGINT=False,
